@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gagan S. Chahal — Data & Analytics Executive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0f1c2e;
+    --navy-mid: #1a2f47;
+    --gold: #c9a96e;
+    --gold-light: #e8d4a8;
+    --cream: #f7f4ee;
+    --cream-dark: #ede9e0;
+    --text: #1a1a1a;
+    --text-muted: #5a5a5a;
+    --text-light: #8a8a8a;
+    --border: rgba(0,0,0,0.1);
+    --section-gap: 6rem;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 300;
+    background: #fff;
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--navy);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--navy); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    background: linear-gradient(135deg, #fff 55%, var(--cream) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-content { max-width: 600px; }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-title {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-tagline {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text);
+    font-weight: 300;
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .badge {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 2px;
+    font-weight: 400;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .btn-primary {
+    background: var(--navy);
+    color: #fff;
+    padding: 0.85rem 2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--navy-mid); transform: translateY(-1px); }
+
+  .btn-secondary {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 400;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-secondary:hover { color: var(--navy); border-color: var(--navy); }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+  }
+
+  .stat-block {
+    text-align: right;
+    padding: 1.5rem 2rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    width: 260px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .stat-block.visible { opacity: 1; transform: translateY(0); }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: var(--section-gap) 4rem; }
+
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 3rem;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--cream); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+
+  .about-text p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .recognition-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .recognition-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .recognition-list li::before {
+    content: '—';
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 0.05em;
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: #fff; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .skill-cell {
+    background: #fff;
+    padding: 2rem;
+    transition: background 0.2s;
+  }
+  .skill-cell:hover { background: var(--cream); }
+
+  .skill-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-name {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .skill-tag {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    background: var(--cream);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    font-weight: 300;
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--cream); }
+
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .exp-item.visible { opacity: 1; transform: translateY(0); }
+  .exp-item:first-child { padding-top: 0; }
+  .exp-item:last-child { border-bottom: none; }
+
+  .exp-meta { padding-top: 0.15rem; }
+
+  .exp-company {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 0.35rem;
+  }
+  .exp-period {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+  .exp-type {
+    display: inline-block;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--border);
+    color: var(--text-light);
+    border-radius: 2px;
+  }
+
+  .exp-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  .exp-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+  .exp-impacts {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .exp-impacts li {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .exp-impacts li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.7rem;
+  }
+
+  /* ── IMPACT ── */
+  #impact { background: var(--navy); }
+  #impact .section-title { color: #fff; }
+  #impact .section-label { color: var(--gold); }
+
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .impact-card {
+    padding: 3rem 2rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: background 0.2s;
+  }
+  .impact-card:hover { background: rgba(255,255,255,0.07); }
+
+  .impact-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .impact-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── EDUCATION ── */
+  #education { background: #fff; }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .edu-block h3 {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  .edu-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .edu-item { padding-left: 1rem; border-left: 2px solid var(--cream-dark); }
+
+  .edu-degree {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+  }
+  .edu-school {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .cert-list { display: flex; flex-direction: column; gap: 1rem; }
+
+  .cert-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+  .cert-item::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .awards-block { margin-top: 3rem; }
+
+  .award-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    border-radius: 2px;
+    margin: 0.3rem 0.3rem 0.3rem 0;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .award-tag:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--cream); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-intro {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+    font-weight: 300;
+  }
+  .contact-link:hover { color: var(--navy); }
+
+  .contact-link-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    width: 80px;
+    flex-shrink: 0;
+  }
+
+  .press-block {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 2rem;
+  }
+
+  .press-block h3 {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  .press-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .press-item:last-child { border-bottom: none; }
+
+  .press-source {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+  }
+  .press-title {
+    font-size: 0.85rem;
+    color: var(--navy);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .press-link {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.72rem;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .press-link:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2.5rem 4rem;
+    background: var(--navy);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer p {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    font-weight: 300;
+    letter-spacing: 0.06em;
+  }
+  footer a {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+  }
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-name { animation-delay: 0.25s; }
+  .hero-title { animation-delay: 0.35s; }
+  .hero-tagline { animation-delay: 0.45s; }
+  .hero-badges { animation-delay: 0.55s; }
+  .hero-cta { animation-delay: 0.65s; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 2rem; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; padding: 7rem 2rem 3rem; }
+    .hero-right { display: none; }
+    section { padding: 4rem 2rem; }
+    .about-grid, .edu-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .impact-grid { grid-template-columns: 1fr 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
+    footer { padding: 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-brand">Gagan S. Chahal</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Fellow BCS · Fellow IETE · Fellow SCRS · IEEE Senior Member</p>
+    <h1 class="hero-name">Gagan<br><em>S. Chahal</em></h1>
+    <p class="hero-title">VP, Data &amp; Analytics · Enterprise Data &amp; AI-Analytics Executive</p>
+    <p class="hero-tagline">
+      16+ years driving bank-scale modernization across BI, data governance, regulated reporting, and fintech transformation — with a track record of measurable outcomes across multi-billion-dollar portfolios.
+    </p>
+    <div class="hero-badges">
+      <span class="badge">2× DataIQ Top 100</span>
+      <span class="badge">International Achievers' Award 2024</span>
+      <span class="badge">NASA Tech Jury Judge</span>
+      <span class="badge">CDO Magazine · The AI Journal</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+      <a href="#experience" class="btn-secondary">View Experience →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-block">
+      <div class="stat-num">$2.5B</div>
+      <div class="stat-label">Portfolio Transformation Led</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">16+</div>
+      <div class="stat-label">Years of Enterprise Data Leadership</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">96%</div>
+      <div class="stat-label">Reporting Automation Achieved</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">$2M</div>
+      <div class="stat-label">Annual Cost Savings Delivered</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">About</p>
+  <h2 class="section-title">Data leader.<br>Strategy architect.<br>Trusted executive partner.</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        Gagan Chahal is a nationally and internationally recognized Enterprise Data &amp; Analytics Executive, currently serving as Vice President at <strong>Regions Bank</strong>, where he leads bank-wide analytics modernization and governance strategy across regulated portfolios.
+      </p>
+      <p>
+        His expertise spans enterprise BI platforms, data governance operating models, AI-enabled analytics, and large-scale fintech transformation. He is known for translating complex data challenges into measurable business outcomes — from building audit-ready control frameworks to enabling board-level reporting across multi-billion-dollar portfolios.
+      </p>
+      <p>
+        Beyond his corporate role, Gagan is a published author in <strong>CDO Magazine</strong> and <strong>The AI Journal</strong>, and an invited judge for NASA (Tech Jury), The Stevie Awards, Future Engineers Org, and JA City. He volunteers with United Way of Salt Lake, UNICEF, and Save Humans Foundation, and his financial literacy programs have benefited thousands in communities across Utah.
+      </p>
+    </div>
+    <div>
+      <ul class="recognition-list">
+        <li>2-time DataIQ Top 100 Data &amp; AI Leader (national &amp; international recognition)</li>
+        <li>International Achievers' Award 2024 — featured in Outlook India for engineering excellence and data transformation leadership</li>
+        <li>Peer-elected Fellow: BCS (The Chartered Institute for IT), IETE, and SCRS; IEEE Senior Member</li>
+        <li>Published author in CDO Magazine and The AI Journal — sharing authoritative insights on data strategy and enterprise governance</li>
+        <li>Invited Technology Judge — NASA (Tech Jury), The Stevie Awards, Future Engineers Org, and JA City</li>
+        <li>Featured in Passion Vista "Men Leaders to Look Up to in 2024"</li>
+        <li>Featured in Tech Times for digital transformation leadership at Regions Bank</li>
+        <li>Cornell Executive Leadership Program graduate (2022)</li>
+        <li>AI for Business Leaders Certification, Cornell (2025)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">Expertise</p>
+  <h2 class="section-title">Technology &amp; platform expertise</h2>
+  <div class="skills-grid">
+    <div class="skill-cell">
+      <div class="skill-icon">📊</div>
+      <p class="skill-name">Business Intelligence</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">SAP BI</span>
+        <span class="skill-tag">Domo</span>
+        <span class="skill-tag">InfoBurst</span>
+        <span class="skill-tag">Domo AI</span>
+      </div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-icon">☁️</div>
+      <p class="skill-name">Cloud Platforms</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Snowflake</span>
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">Azure</span>
+        <span class="skill-tag">Redshift</span>
+      </div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-icon">🔄</div>
+      <p class="skill-name">Data Engineering</p>
+      <div class="skill-tags">
+        <span class="skill-tag">ETL/ELT</span>
+        <span class="skill-tag">MS SQL</span>
+        <span class="skill-tag">SAP Pipelines</span>
+        <span class="skill-tag">Data Warehousing</span>
+      </div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-icon">🛡️</div>
+      <p class="skill-name">Governance &amp; Controls</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Collibra</span>
+        <span class="skill-tag">Trillium</span>
+        <span class="skill-tag">Data Catalogs</span>
+        <span class="skill-tag">SOX</span>
+        <span class="skill-tag">PII Management</span>
+      </div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-icon">🤖</div>
+      <p class="skill-name">AI &amp; Analytics</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Predictive Analytics</span>
+        <span class="skill-tag">Machine Learning</span>
+        <span class="skill-tag">Data Science</span>
+        <span class="skill-tag">AI Adoption</span>
+      </div>
+    </div>
+    <div class="skill-cell">
+      <div class="skill-icon">🏦</div>
+      <p class="skill-name">Regulated Banking</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Risk Reporting</span>
+        <span class="skill-tag">Audit Controls</span>
+        <span class="skill-tag">Regulatory Compliance</span>
+        <span class="skill-tag">Federal Reserve</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">Career</p>
+  <h2 class="section-title">Professional experience</h2>
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-company">Regions Bank</p>
+        <p class="exp-period">2022 – Present</p>
+        <span class="exp-type">Banking</span>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-role">Vice President, Data &amp; Analytics</h3>
+        <p class="exp-desc">
+          Enterprise leader for analytics modernization and governance strategy across regulated portfolios, managing a $3.2M BI &amp; Analytics budget. Serving as strategic partner to Risk, Finance, Compliance, and Marketing leadership.
+        </p>
+        <ul class="exp-impacts">
+          <li>Directed transformation of a $2.5B loan portfolio into a next-generation servicing platform with zero integrity loss, generating ~$2M in annual savings</li>
+          <li>Optimized Snowflake + SAP pipelines, reducing ETL runtime ~60% and enabling near real-time executive reporting</li>
+          <li>Built enterprise governance operating model with 200+ automated QA controls sustaining 99.99% uptime</li>
+          <li>Advanced AI-enabled analytics adoption through Domo AI, enabling AI-assisted insights across the organization</li>
+          <li>Delivered board-ready reporting, governance controls, and regulatory transparency across multi-billion-dollar portfolios</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-company">EnerBank USA (Fintech)</p>
+        <p class="exp-period">2020 – 2022</p>
+        <span class="exp-type">Fintech</span>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-role">Assistant Vice President, BI &amp; Data Services</h3>
+        <p class="exp-desc">
+          Executive leader for fintech modernization, enterprise reporting consolidation, and audit-ready governance frameworks. Oversaw $16M+ digital transformation initiative.
+        </p>
+        <ul class="exp-impacts">
+          <li>Consolidated loan platforms into a centralized reporting and controls hub — a $16M+ digital transformation</li>
+          <li>Migrated Redshift dataflows into enterprise ETL architecture, improving reporting efficiency by ~70%</li>
+          <li>Established governance foundations improving transparency for auditors and business stakeholders</li>
+          <li>Strengthened SOX controls, PII protections, monitoring, and disaster recovery practices</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-company">EnerBank USA</p>
+        <p class="exp-period">2011 – 2020</p>
+        <span class="exp-type">Progressive Growth</span>
+      </div>
+      <div class="exp-content">
+        <h3 class="exp-role">Progressive Leadership — BI, Reporting &amp; SAP Roles</h3>
+        <p class="exp-desc">
+          Built a decade-long track record of progressive responsibility across reporting management, BI development, and SAP leadership. Established the analytics foundation that underpins the organization's reporting capabilities today.
+        </p>
+        <ul class="exp-impacts">
+          <li>As Reporting Manager: Built investor analytics repository supporting $350M divestment; strengthened SOX controls and CFO-level reporting strategy</li>
+          <li>As Sr. BI Developer: Integrated multi-loan systems into unified SAP BI repository, improving reporting turnaround ~30%</li>
+          <li>In SAP BI Leadership roles: Automated reporting saving 500+ manual hours/month and delivered executive dashboards enterprise-wide</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <p class="section-label">Enterprise Impact</p>
+  <h2 class="section-title">Results at scale</h2>
+  <div class="impact-grid">
+    <div class="impact-card">
+      <div class="impact-num">$2.5B</div>
+      <div class="impact-label">Portfolio transformation — migrated multi-billion-dollar loan assets with full lineage, reconciliation, and regulatory integrity</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-num">$350M</div>
+      <div class="impact-label">Revenue enablement — supported major loan divestment efforts and integrated 40K+ loan records into a $3B servicing platform</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-num">$16M</div>
+      <div class="impact-label">Digital modernization — built enterprise automation backbone increasing reporting automation from 40% to 96%</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-num">1,000+</div>
+      <div class="impact-label">Staff hours saved per month through automation initiatives at EnerBank</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-num">60%</div>
+      <div class="impact-label">ETL runtime reduction via Snowflake + SAP pipeline optimization at Regions Bank</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-num">99.99%</div>
+      <div class="impact-label">Data platform uptime maintained through 200+ automated QA controls and enterprise governance model</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-label">Credentials</p>
+  <h2 class="section-title">Education &amp; recognition</h2>
+  <div class="edu-grid">
+    <div>
+      <div class="edu-block">
+        <h3>Academic Degrees</h3>
+        <div class="edu-list">
+          <div class="edu-item">
+            <p class="edu-degree">M.S. Software Engineering</p>
+            <p class="edu-school">International Technological University (ITU), California · 2019</p>
+          </div>
+          <div class="edu-item">
+            <p class="edu-degree">M.S. Mechanical Engineering</p>
+            <p class="edu-school">California State University, Fullerton · 2011</p>
+          </div>
+        </div>
+      </div>
+      <div class="edu-block" style="margin-top: 2.5rem;">
+        <h3>Certifications &amp; Programs</h3>
+        <div class="cert-list">
+          <div class="cert-item">AI for Business Leaders — Cornell University (2025)</div>
+          <div class="cert-item">Executive Leadership Program — Cornell University (2022)</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="edu-block">
+        <h3>Professional Fellowships</h3>
+        <div class="cert-list">
+          <div class="cert-item">Fellow, BCS — The Chartered Institute for IT (FBCS)</div>
+          <div class="cert-item">Fellow, Institute of Electronics and Telecommunication Engineers (FIETE)</div>
+          <div class="cert-item"><a href="https://scrs.in/scrs-fellow/443" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">Fellow, Soft Computing Research Society (FSCRS)</a></div>
+          <div class="cert-item">IEEE Senior Member</div>
+        </div>
+      </div>
+      <div class="awards-block">
+        <div class="edu-block" style="margin-top: 2.5rem;">
+          <h3>Awards &amp; Recognition</h3>
+        </div>
+        <div>
+          <span class="award-tag">2× DataIQ Top 100</span>
+          <span class="award-tag">International Achievers' Award 2024</span>
+          <span class="award-tag">NASA Tech Jury Judge</span>
+          <span class="award-tag">Stevie Awards Judge</span>
+          <span class="award-tag">Future Engineers Org Judge</span>
+          <span class="award-tag">JA City Judge</span>
+          <span class="award-tag">CDO Magazine Author</span>
+          <span class="award-tag">The AI Journal Author</span>
+          <span class="award-tag">Passion Vista 2024</span>
+          <span class="award-tag">Above &amp; Beyond — EnerBank (×3)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">Contact</p>
+  <h2 class="section-title">Let's connect</h2>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-intro">
+        Open to executive leadership opportunities in enterprise data, analytics strategy, and fintech transformation. Based in Salt Lake City, UT — open to relocation.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:gunnychahal@gmail.com" class="contact-link">
+          <span class="contact-link-label">Email</span>
+          gunnychahal@gmail.com
+        </a>
+        <a href="tel:2563616131" class="contact-link">
+          <span class="contact-link-label">Phone</span>
+          256-361-6131
+        </a>
+        <a href="https://www.linkedin.com/in/gagan-chahal-0b794094/" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-label">LinkedIn</span>
+          gagan-chahal-0b794094
+        </a>
+        <a href="https://orcid.org/0009-0000-0397-938X" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-label">ORCID</span>
+          Publications &amp; Peer Reviews →
+        </a>
+        <a class="contact-link" style="cursor: default; pointer-events: none;">
+          <span class="contact-link-label">Location</span>
+          Salt Lake City, UT · Open to Relocation
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="press-block">
+        <h3>Publications &amp; Press</h3>
+        <div class="press-item">
+          <p class="press-source">CDO Magazine · May 2025</p>
+          <p class="press-title">How to Build a Modern BI Program — 10 Steps for Integrating AI, Automation, and Governance</p>
+          <a href="https://www.cdomagazine.tech/opinion-analysis/how-to-build-a-modern-bi-program-10-steps-for-integrating-ai-automation-and-governance" target="_blank" rel="noopener" class="press-link">Read Article →</a>
+        </div>
+        <div class="press-item">
+          <p class="press-source">The AI Journal · July 2025</p>
+          <p class="press-title">Applied AI in Data Analytics: Use Cases Driving Business Insights</p>
+          <a href="https://aijourn.com/applied-ai-in-data-analytics-use-cases-driving-business-insights/" target="_blank" rel="noopener" class="press-link">Read Article →</a>
+        </div>
+        <div class="press-item">
+          <p class="press-source">The AI Journal · November 2024</p>
+          <p class="press-title">Unlocking Team Potential: The Art of Motivation and Performance Enhancement</p>
+          <a href="https://aijourn.com/unlocking-team-potential-the-art-of-motivation-and-performance-enhancement/" target="_blank" rel="noopener" class="press-link">Read Article →</a>
+        </div>
+        <div class="press-item">
+          <p class="press-source">The AI Journal · November 2024</p>
+          <p class="press-title">Elevating Standards: The Strategic Imperative of Quality and Service Excellence in Modern Business</p>
+          <a href="https://aijourn.com/elevating-standards-the-strategic-imperative-of-quality-and-service-excellence-in-modern-business/" target="_blank" rel="noopener" class="press-link">Read Article →</a>
+        </div>
+        <div class="press-item">
+          <p class="press-source">Outlook India · November 2024</p>
+          <p class="press-title">The Journey of Gagandeep Chahal: Engineering Excellence and Data Transformation</p>
+          <a href="https://www.outlookindia.com/hub4business/the-journey-of-gagandeep-chahal-engineering-excellence-and-data-transformation" target="_blank" rel="noopener" class="press-link">Read Feature →</a>
+        </div>
+        <div class="press-item" style="border-bottom: none; padding-bottom: 0;">
+          <p class="press-source">More Coverage</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.4rem;">
+            <a href="https://www.techtimes.com/articles/308286/20241114/role-gagandeep-chahal-regions-banks-digital-transformation.htm" target="_blank" rel="noopener" class="press-link" style="margin-top: 0;">Tech Times →</a>
+            <a href="https://scrs.in/scrs-fellow/443" target="_blank" rel="noopener" class="press-link" style="margin-top: 0;">SCRS Fellow →</a>
+            <a href="https://orcid.org/0009-0000-0397-938X" target="_blank" rel="noopener" class="press-link" style="margin-top: 0;">ORCID →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="press-block" style="margin-top: 2rem;">
+        <h3>Awards &amp; Honors</h3>
+        <div class="press-item">
+          <p class="press-source">DataIQ Top 100 · 2026</p>
+          <p class="press-title">Top 100 Data &amp; AI Leader — International Recognition</p>
+          <a href="https://www.dataiq.global/dataiq100/gagandeep-singh-chahal-vice-president-data-analytics-regions-bank/" target="_blank" rel="noopener" class="press-link">View Profile →</a>
+        </div>
+        <div class="press-item">
+          <p class="press-source">DataIQ Top 100 · 2025</p>
+          <p class="press-title">Top 100 Data &amp; AI Leader — North America Recognition</p>
+          <a href="https://www.dataiq.global/dataiq100/gagandeep-chahal-vice-president-data-and-analytics-regions-bank/" target="_blank" rel="noopener" class="press-link">View Profile →</a>
+        </div>
+        <div class="press-item">
+          <p class="press-source">International Achievers' Award · 2024</p>
+          <p class="press-title">Recognized for engineering excellence and data transformation leadership in financial services</p>
+          <a href="https://www.outlookindia.com/hub4business/the-journey-of-gagandeep-chahal-engineering-excellence-and-data-transformation" target="_blank" rel="noopener" class="press-link">Read Feature →</a>
+        </div>
+        <div class="press-item">
+          <p class="press-source">Passion Vista · 2024</p>
+          <p class="press-title">Men Leaders to Look Up to in 2024</p>
+        </div>
+        <div class="press-item" style="border-bottom: none; padding-bottom: 0;">
+          <p class="press-source">EnerBank USA · 2015, 2016 &amp; 2018</p>
+          <p class="press-title">Above &amp; Beyond Award — three-time recipient for outstanding contribution</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Gagan S. Chahal · Salt Lake City, UT</p>
+  <div style="display: flex; gap: 2rem;">
+    <a href="https://www.linkedin.com/in/gagan-chahal-0b794094/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://orcid.org/0009-0000-0397-938X" target="_blank" rel="noopener">ORCID</a>
+    <a href="mailto:gunnychahal@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.stat-block, .exp-item').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.stat-block').forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.12) + 's';
+  });
+  document.querySelectorAll('.exp-item').forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.1) + 's';
+  });
+</script>
+</body>
+</html>
